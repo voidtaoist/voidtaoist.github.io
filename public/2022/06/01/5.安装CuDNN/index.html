@@ -7,11 +7,15 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="由于比赛需要，我和小伙伴给好几台机器都配置了cuda环境。安装cuda的时候虽然参考了很多教程，但也避免不了踩坑，因此总结了一个比较完善的方法。 1.更换linux内核 Ubuntu16.04一般都是4.15的内核，而cuda9.0不支持此版本的内核，因此需要更换为4.4版本。 (1)查看已安装的内核版本 1dpkg -l | grep linux-image (2)查看当前使用的内核，若为4.1">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/2022/06/01/5.%E5%AE%89%E8%A3%85CuDNN/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="由于比赛需要，我和小伙伴给好几台机器都配置了cuda环境。安装cuda的时候虽然参考了很多教程，但也避免不了踩坑，因此总结了一个比较完善的方法。 1.更换linux内核 Ubuntu16.04一般都是4.15的内核，而cuda9.0不支持此版本的内核，因此需要更换为4.4版本。 (1)查看已安装的内核版本 1dpkg -l | grep linux-image (2)查看当前使用的内核，若为4.1">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-01T06:48:15.850Z">
+<meta property="article:modified_time" content="2022-06-01T06:48:15.927Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -62,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-5.安装CuDNN" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-5.安装CuDNN" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/06/01/5.%E5%AE%89%E8%A3%85CuDNN/" class="article-date">
   <time datetime="2022-06-01T06:48:15.850Z" itemprop="datePublished">2022-06-01</time>
@@ -208,184 +210,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-# GIT基本操作" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/01/#%20GIT%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="article-date">
-  <time datetime="2022-06-01T06:43:20.591Z" itemprop="datePublished">2022-06-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="GIT基本操作"><a href="#GIT基本操作" class="headerlink" title="GIT基本操作"></a>GIT基本操作</h1><p>下面是一些日常操作</p>
-<h2 id="1-建立本地仓库"><a href="#1-建立本地仓库" class="headerlink" title="1. 建立本地仓库:"></a>1. 建立本地仓库:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init [project-name]  <span class="comment">#创建本地仓库</span></span><br></pre></td></tr></table></figure>
+  
+    <a href="/2022/06/01/#%20GIT%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
 
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:UserName/yourProjectName.git   </span><br><span class="line"><span class="comment">#把本地仓库和远程仓库关联起来， 如果不执行这个命令的话，每次 push 的时候都需要指定远程服务器的地址</span></span><br><span class="line"></span><br><span class="line">git remote add origin git@github.com:UserName/yourProjectName.git   </span><br><span class="line"><span class="comment">#把本地仓库和远程仓库关联起来， 如果不执行这个命令的话，每次 push 的时候都需要指定远程服务器的地址</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zhoulujun/yourProjectName.git</span><br><span class="line"><span class="comment">#下载github仓库</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-提交本地修改到远程仓库中："><a href="#2-提交本地修改到远程仓库中：" class="headerlink" title="2.提交本地修改到远程仓库中："></a>2.提交本地修改到远程仓库中：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git add <span class="comment"># 将改动添加到本地仓库中  </span></span><br><span class="line"></span><br><span class="line">git add [file1] [file2] ...  ||  git add [<span class="built_in">dir</span>] <span class="comment"># 添加指定文件||目录到暂存区</span></span><br><span class="line"></span><br><span class="line">git add -A ||  git add . <span class="comment"># 添加当前目录的所有文件到暂存区</span></span><br><span class="line"></span><br><span class="line">git add -p <span class="comment"># 添加每个变化前，都会要求确认，对于同一个文件的多处变化，可以实现分次提交</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">rm</span> xxx      <span class="comment"># 从本地仓库中删除指定文件</span></span><br><span class="line">git <span class="built_in">rm</span> -r xxx   <span class="comment"># 从本地仓库中删除指定文件夹</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">rm</span> --cached [file]</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">mv</span> [file-original] [file-renamed]  改名文件，并且将这个改名放入暂存区</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;注释&quot;</span>    -- 把本机缓存中的内容提交到本机的 HEAD 里面</span><br><span class="line"></span><br><span class="line">git commit -a 提交工作区自上次commit之后的变化，直接到仓库区</span><br><span class="line"></span><br><span class="line">git commit -v 提交时显示所有diff信息</span><br><span class="line"></span><br><span class="line">git commit --amend -m [message] 使用一次新的commit，替代上一次提交，如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line"></span><br><span class="line">git commit --amend [file1] [file2] ... 重做上一次commit，并包括指定文件的新变化</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git push origin master  -- 把本地的 commit(提交) push 到远程服务器上， origin 也就是之前 git remote add origin 那个命令里面的 origin，origin 替代了服务器仓库地址：git@github.com:zhoulujun/yourProjectName.git </span><br><span class="line"></span><br><span class="line">git push remoteBranchName tagName提交指定tag</span><br><span class="line"></span><br><span class="line">git push remoteBranchName --tags 提交所有tag</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-git转态查看"><a href="#3-git转态查看" class="headerlink" title="3. git转态查看"></a>3. git转态查看</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status 查看状态</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git branch 查看本地所有分支</span><br><span class="line"></span><br><span class="line">git branch -r查看远程所有分支</span><br><span class="line"></span><br><span class="line">git branch -a查看本地和远程所有分支</span><br></pre></td></tr></table></figure>
-<p>git tag  列出所有tag</p>
-<p>git show tagName 查看tag信息</p>
-<p>git log –stat 显示commit历史，以及每次commit发生变更的文件</p>
-<p>分支操作<br>git checkout branchName 切换到指定分支，并更新工作区</p>
-<p>git merge branchName 合并指定分支到当前分支</p>
-<p>git branch newBranchName 新建一个分支，但依然停留在当前分支</p>
-<p>git branch –track branch remote-branch 新建一个分支，与指定的远程分支建立追踪关系</p>
-<p>git branch -D branchName //删除目标分支</p>
-<p>git checkout -b branchName 新建并切换至新分支</p>
-<p>git branch -d -r branchName 删除远程分支，其中</p>
-<p>git branch -m oldbranchname newbranchname  重命名分支 使用-M则表示强制重命名</p>
-<p>重命名远程分支</p>
-<p>git branch -m old_name new_name 重命名分支</p>
-<p>git checkout -b new_branch_name from_branch_name 本地建立 branch 並立即 checkout 切換過去</p>
-<p>git push origin –delete old_name</p>
-<p>也可以如此操作</p>
-<p>git branch -m old_branch new_branch # Rename branch locally</p>
-<p>git push origin :old_branch # Delete the old branch</p>
-<p>git push –set-upstream origin new_branch 或者git push -u origin new_branch  # Push the new branch, set local branch to track the new remote</p>
-<p>git分支与主干合并操作<br>在主干上合并分支||主干合并分支<br>git merge branch –squash //提交合并后的代码</p>
-<p>git commit -m  ‘合并备注’</p>
-<p>git push //将代码推送到远程仓库</p>
-<p>分支同步主干代码||在分支上合并主干<br>git merge master –squash //提交合并后的代码</p>
-<p>git commit -m  ‘合并备注’ //将代码推送到远程仓库</p>
-<p>git push //将代码推送到远程仓库</p>
-<p>git强制覆盖本地代码<br>与git远程仓库保持一致</p>
-<p>git fetch –all</p>
-<p>git reset –hard origin/master</p>
-<p>git pull</p>
-<p>git强制覆盖本地命令（单条执行）：</p>
-<p>git fetch –all &amp;&amp; git reset –hard origin/master &amp;&amp; git pull</p>
-<p>git修改远程仓库地址<br>方法有三种：</p>
-<p>1.修改命令</p>
-<p>git remote origin set-url [url]</p>
-<p>2.先删后加</p>
-<p>git remote rm origin</p>
-<p>git remote add origin [url]</p>
-<p>3.直接修改config文件</p>
-<p>.git文件夹，找到config，编辑，把就的项目地址替换成新的。</p>
-<p>git 配置<br>git config –list        查看配置列表</p>
-<p>git config –global user.name “xxx”   – 配置用户名，上传本地 repository 到服务器上的时候，在 Github 上会显示这里配置的上传者信息</p>
-<p>git config –global user.email “xxx”    – 配置邮箱<br>配置 sshkey ： 上传代码时使用这个 sshkey 来确认是否有上传权限<br>    1. 创建本地 ssh ： ssh-keygen -t rsa -C “Github 的注册邮箱”<br>    2. 在 Github 中添加这个 sshkey ：<br>        复制  C:\Documents and Settings\Administrator.ssh\id_rsa.pub 文件中的内容；<br>        登录 Github –&gt; Account Setting  –&gt; SSH-KEY –&gt; Add SSH-KEY –&gt; 粘贴id_rsa.pub中的内容；<br>    3. 验证： ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#109;">&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#109;</a><br>        出现 Hi xxx! You’ve successfully authenticated, but GitHub does not provide shell access. 说明配置成功，可以连接上 Github</p>
-<p>使用 .gitignore 文件忽略指定的内容：</p>
-<pre><code>1. 在本地仓库根目录创建 .gitignore 文件。Win7 下不能直接创建，可以创建 &quot;.gitignore.&quot; 文件，后面的标点自动被忽略；
-2. 过滤文件和文件夹： [Tt]emp/ 过滤 Temp\temp 文件夹； *.suo 过滤 .suo 文件；
-3. 不过滤文件和文件夹： !*.c
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/01/#%20GIT%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" data-id="cl3vevq5y0001ykuicagd8p9n" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-article-title" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/01/article-title/" class="article-date">
-  <time datetime="2022-06-01T04:21:42.000Z" itemprop="datePublished">2022-06-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/01/article-title/">article title</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/01/article-title/" data-id="cl3v33j0l0000csui8sh85glj" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/01/hello-world/" class="article-date">
-  <time datetime="2022-06-01T04:16:37.350Z" itemprop="datePublished">2022-06-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/01/hello-world/" data-id="cl3v33j0t0001csui16k8ggsz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
