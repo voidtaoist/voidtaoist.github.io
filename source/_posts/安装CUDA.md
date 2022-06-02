@@ -1,3 +1,9 @@
+---
+title: CUDA安装指南
+comment: true
+tags: CUDA
+my: void
+---
 由于比赛需要，我和小伙伴给好几台机器都配置了cuda环境。安装cuda的时候虽然参考了很多教程，但也避免不了踩坑，因此总结了一个比较完善的方法。
 
 1.更换linux内核
